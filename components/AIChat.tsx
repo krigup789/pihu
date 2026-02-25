@@ -20,43 +20,59 @@ export default function AIChat() {
 
   const sendMessage = async () => {
     if (!input.trim() || loading) return;
-
+  
+    const userText = input; // 🔥 capture before clearing
+  
     const userMessage: Message = {
       role: "user",
-      content: input,
+      content: userText,
     };
-
+  
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setLoading(true);
-
+  
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/chat`,
+        "https://pihu-backend.onrender.com/chat",
         null,
         {
-          params: { message: input },
-        },
+          params: { message: userText }, // 🔥 use captured value
+          timeout: 60000,
+        }
       );
-
-      const aiMessage: Message = {
-        role: "assistant",
-        content: response.data.reply,
-      };
-
-      setMessages((prev) => [...prev, aiMessage]);
-    } catch (error) {
+  
+      console.log("FULL RESPONSE:", response);
+  
+      // 🔥 Safely extract reply
+      const reply =
+        response &&
+        response.data &&
+        typeof response.data.reply === "string"
+          ? response.data.reply
+          : "No valid reply received.";
+  
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
-          content:
-            "### Connection Error\n\nUnable to connect to backend server.\n\nPlease try again later.",
+          content: reply,
         },
       ]);
+    } catch (err: any) {
+      console.error("AXIOS ERROR:", err);
+      console.error("AXIOS ERROR RESPONSE:", err?.response);
+  
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: "⚠️ Something went wrong. Check console.",
+        },
+      ]);
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   useEffect(() => {
