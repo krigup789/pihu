@@ -20,43 +20,55 @@ export default function AIChat() {
 
   const sendMessage = async () => {
     if (!input.trim() || loading) return;
-
+  
     const userMessage: Message = {
       role: "user",
       content: input,
     };
-
+  
     setMessages((prev) => [...prev, userMessage]);
     setInput("");
     setLoading(true);
-
+  
     try {
       const response = await axios.post(
         "https://pihu-backend.onrender.com/chat",
         null,
         {
           params: { message: input },
-        },
+          timeout: 60000, // 🔥 important for Render cold start
+        }
       );
-
-      const aiMessage: Message = {
-        role: "assistant",
-        content: response.data.reply,
-      };
-
-      setMessages((prev) => [...prev, aiMessage]);
-    } catch (error) {
+  
+      console.log("Backend Response:", response);
+  
+      const reply = response?.data?.reply;
+  
+      if (!reply) {
+        throw new Error("Empty reply from backend");
+      }
+  
+      setMessages((prev) => [
+        ...prev,
+        {
+          role: "assistant",
+          content: reply,
+        },
+      ]);
+    } catch (error: any) {
+      console.error("Chat Error:", error);
+  
       setMessages((prev) => [
         ...prev,
         {
           role: "assistant",
           content:
-            "### Connection Error\n\nUnable to connect to backend server.\n\nPlease try again later.",
+            "⚠️ Server is waking up... Please try again in a few seconds.",
         },
       ]);
+    } finally {
+      setLoading(false);
     }
-
-    setLoading(false);
   };
 
   useEffect(() => {
