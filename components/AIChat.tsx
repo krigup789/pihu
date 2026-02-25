@@ -32,7 +32,7 @@ export default function AIChat() {
 
     try {
       const response = await axios.post(
-        `${process.env.NEXT_PUBLIC_API_URL}/chat`,
+        "https://pihu-backend.onrender.com/chat",
         null,
         {
           params: { message: input },
