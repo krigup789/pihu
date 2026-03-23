@@ -13,7 +13,7 @@ import { useEffect, useState, FormEvent } from "react";
 import FloatingHearts from "@/components/FloatingHearts";
 
 export default function Page() {
-  const CORRECT_PASSWORD = "pihu";
+  const CORRECT_PASSWORD = "chiku i love you";
 
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
