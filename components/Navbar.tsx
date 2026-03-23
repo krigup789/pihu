@@ -8,10 +8,20 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const navLinks = [
-    { name: "My Pihu", href: "/#" },
-    { name: "Our Story", href: "/#About" },
-    { name: "Our Journey", href: "/#Timeline" },
-    { name: "FAQ", href: "/#faq" },
+    { name: "My Pihu 💖", href: "/#" }, // Hero
+    { name: "Our Story 💛", href: "/#About" },
+    { name: "Journey 📍", href: "/#Timeline" },
+    { name: "Gallery 📸", href: "/#Gallery" },
+    { name: "Moments 🎥", href: "/#Video" },
+    { name: "Love Letter 💌", href: "/#Love" },
+    { name: "Us 👥", href: "/#Team" },
+    { name: "FAQs 😄", href: "/#faq" },
+    // 🔥 NEW (external link)
+    {
+      name: "About pihu 📄",
+      href: "https://resumebuddy-krish.vercel.app/view/69a6f0bf46c79f21a620ae08",
+      external: true,
+    },
   ];
 
   return (
@@ -31,6 +41,7 @@ export default function Navbar() {
           {navLinks.map((link) => (
             <a
               href={link.href}
+              target={link.external ? "_blank" : "_self"}
               key={link.name}
               className="hover:text-white transition"
             >

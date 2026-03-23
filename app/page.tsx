@@ -26,8 +26,15 @@ export default function Page() {
     if (password === CORRECT_PASSWORD) {
       setIsAuthenticated(true);
       setError("");
-    } else {
-      setError("Wrong password 😅");
+
+      // 🔥 PLAY MUSIC AFTER LOGIN
+      setTimeout(() => {
+        const music = document.getElementById("bg-music") as HTMLAudioElement;
+        if (music) {
+          music.volume = 0.5;
+          music.play().catch(() => {});
+        }
+      }, 300);
     }
   };
 

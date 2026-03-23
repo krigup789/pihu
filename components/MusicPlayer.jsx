@@ -19,40 +19,43 @@ export default function MusicPlayer() {
   };
 
   useEffect(() => {
-    const handleFirstInteraction = () => {
-      if (!audioRef.current) return;
+    const audio = audioRef.current;
 
-      audioRef.current.volume = 0.5;
+    if (!audio) return;
 
-      const playAudio = async () => {
-        try {
-          await audioRef.current.play();
-          setPlaying(true);
-          console.log("Music started ✅");
-        } catch (err) {
-          console.log("Autoplay blocked ❌", err);
-        }
-      };
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
 
-      playAudio();
-    };
-
-    // 🔥 Use multiple events (fixes mobile + desktop)
-    document.addEventListener("click", handleFirstInteraction, { once: true });
-    document.addEventListener("touchstart", handleFirstInteraction, {
-      once: true,
-    });
+    audio.addEventListener("play", onPlay);
+    audio.addEventListener("pause", onPause);
 
     return () => {
-      document.removeEventListener("click", handleFirstInteraction);
-      document.removeEventListener("touchstart", handleFirstInteraction);
+      audio.removeEventListener("play", onPlay);
+      audio.removeEventListener("pause", onPause);
+    };
+  }, []);
+
+  useEffect(() => {
+    const audio = audioRef.current;
+
+    if (!audio) return;
+
+    const onPlay = () => setPlaying(true);
+    const onPause = () => setPlaying(false);
+
+    audio.addEventListener("play", onPlay);
+    audio.addEventListener("pause", onPause);
+
+    return () => {
+      audio.removeEventListener("play", onPlay);
+      audio.removeEventListener("pause", onPause);
     };
   }, []);
 
   return (
     <>
       {/* 🎵 Audio */}
-      <audio ref={audioRef} loop preload="auto">
+      <audio id="bg-music" ref={audioRef} loop preload="auto">
         <source src="/music2.mp3" type="audio/mpeg" />
       </audio>
 

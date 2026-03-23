@@ -1,53 +1,28 @@
 "use client";
-import { footerLinks } from "@/data/dummy-data";
 import { motion } from "framer-motion";
 
 export default function Footer() {
   return (
     <motion.footer
-      className="bg-white/6 border-t border-white/6 pt-10 text-gray-300"
+      className="bg-white/6 border-t border-white/6 pt-10 text-gray-300 shadow-[0_0_30px_rgba(255,105,180,0.2)]"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}
       transition={{ type: "spring", duration: 0.5 }}
     >
       <div className="max-w-6xl mx-auto px-6">
-        <div className="flex flex-col md:flex-row items-start justify-between gap-10 py-10 border-b border-white/10">
+        <div className="flex justify-center md:flex-row items-center md:items-start justify-between gap-10 py-10 border-b border-white/10 text-center md:text-left">
           <div>
-            <img src="/logo.png" alt="logo" className="h-8" />
-            <p className="max-w-[410px] mt-6 text-sm leading-relaxed">
+            <img src="/logo.png" alt="logo" className="h-10" />
+            <p className="max-w-[410px] mt-6 text-lg leading-relaxed">
               This is not just a website… it’s a collection of our memories,
               moments, and everything I feel for you ❤️
             </p>
           </div>
-
-          <div className="flex flex-wrap justify-between w-full md:w-[45%] gap-5">
-            {footerLinks.map((section, index) => (
-              <div key={index}>
-                <h3 className="font-semibold text-base text-white md:mb-5 mb-2">
-                  {section.title}
-                </h3>
-                <ul className="text-sm space-y-1">
-                  {section.links.map(
-                    (link: { name: string; url: string }, i) => (
-                      <li key={i}>
-                        <a
-                          href={link.url}
-                          className="hover:text-white transition"
-                        >
-                          {link.name}
-                        </a>
-                      </li>
-                    ),
-                  )}
-                </ul>
-              </div>
-            ))}
-          </div>
         </div>
 
         <motion.p
-          className="py-4 text-center text-sm text-gray-400 flex items-center justify-center gap-2"
+          className="py-4 text-center text-xl text-gray-400 flex items-center justify-center gap-2"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}

@@ -25,7 +25,10 @@ const teamData = [
 
 export default function Team() {
   return (
-    <section className="py-24 px-4 text-white border-pink-400 shadow-[0_0_25px_rgba(255,105,180,0.5)] rounded-xl">
+    <section
+      id="Team"
+      className="py-24 px-4 text-white border-pink-400 shadow-[0_0_25px_rgba(255,105,180,0.5)] rounded-xl"
+    >
       {/* Heading */}
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold">Us 👥</h2>

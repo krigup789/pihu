@@ -62,6 +62,11 @@ export default function Timeline() {
   });
 
   const height = useTransform(scrollYProgress, [0, 1], ["0%", "100%"]);
+  const activeIndex = useTransform(
+    scrollYProgress,
+    [0, 1],
+    [0, timelineData.length - 1],
+  );
 
   return (
     <section id="Timeline" className="relative py-24 px-4 text-white">
@@ -76,9 +81,12 @@ export default function Timeline() {
       {/* Timeline Container */}
       <div ref={ref} className="relative max-w-6xl mx-auto">
         {/* Vertical Line */}
+        <div className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 w-1 h-full bg-white/10" />
         <motion.div
           style={{ height }}
-          className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 w-0.5 bg-gradient-to-b via-white"
+          className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 w-1 
+                    bg-gradient-to-b from-purple-500 via-purple-400 to-transparent
+                    shadow-[0_0_20px_rgba(124,58,237,0.6)]"
         />
         <motion.div
           style={{ top: height }}
@@ -89,7 +97,7 @@ export default function Timeline() {
           {timelineData.map((item, index) => (
             <motion.div
               key={item.id}
-              className={`group flex flex-col md:flex-row items-center gap-20 ${
+              className={`relative group flex flex-col md:flex-row items-center gap-20 ${
                 index % 2 !== 0 ? "md:flex-row-reverse" : ""
               }`}
               initial={{ opacity: 0, y: 100 }}
@@ -102,6 +110,41 @@ export default function Timeline() {
                 stiffness: 120,
               }}
             >
+              {/* DOT (add z-index + alignment) */}
+              <motion.div className="absolute left-1/2 -translate-x-1/2 z-20 hidden md:block">
+                <motion.div
+                  className="w-4 h-4 rounded-full border-4 border-black"
+                  style={{
+                    backgroundColor: useTransform(
+                      scrollYProgress,
+                      [
+                        index / timelineData.length,
+                        (index + 1) / timelineData.length,
+                      ],
+                      ["#444", "#7c3aed"],
+                    ),
+                    scale: useTransform(
+                      scrollYProgress,
+                      [
+                        index / timelineData.length,
+                        (index + 1) / timelineData.length,
+                      ],
+                      [1, 1.4],
+                    ),
+                    boxShadow: useTransform(
+                      scrollYProgress,
+                      [
+                        index / timelineData.length,
+                        (index + 1) / timelineData.length,
+                      ],
+                      [
+                        "0px 0px 0px rgba(0,0,0,0)",
+                        "0px 0px 15px rgba(124,58,237,0.9)",
+                      ],
+                    ),
+                  }}
+                />
+              </motion.div>
               {/* Image */}
               <div className="flex-1 ">
                 <img

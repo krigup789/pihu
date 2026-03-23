@@ -28,8 +28,31 @@ const videoData = [
 export default function VideoSection() {
   const [selectedVideo, setSelectedVideo] = useState(null);
 
+  // 🔥 NEW: open video + pause music
+  const handleOpenVideo = (item) => {
+    setSelectedVideo(item);
+
+    const music = document.getElementById("bg-music");
+    if (music) {
+      music.pause();
+    }
+  };
+
+  // 🔥 NEW: close video + resume music
+  const handleCloseVideo = () => {
+    setSelectedVideo(null);
+
+    const music = document.getElementById("bg-music");
+    if (music) {
+      music.play().catch(() => {});
+    }
+  };
+
   return (
-    <section className="py-24 px-4 text-white hover:shadow-[0_0_30px_rgba(255,105,180,0.4)] transition-shadow duration-300 rounded-xl">
+    <section
+      id="Video"
+      className="py-24 px-4 text-white hover:shadow-[0_0_30px_rgba(255,105,180,0.4)] transition-shadow duration-300 rounded-xl"
+    >
       {/* Heading */}
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold">Our Moments 🎥</h2>
@@ -45,7 +68,7 @@ export default function VideoSection() {
             key={item.id}
             whileHover={{ scale: 1.05 }}
             className="relative group cursor-pointer rounded-xl overflow-hidden"
-            onClick={() => setSelectedVideo(item)}
+            onClick={() => handleOpenVideo(item)}
           >
             {/* Thumbnail */}
             <img
@@ -73,7 +96,7 @@ export default function VideoSection() {
           {/* Close */}
           <button
             className="absolute top-6 right-6 text-white bg-white/10 p-2 rounded-full"
-            onClick={() => setSelectedVideo(null)}
+            onClick={handleCloseVideo}
           >
             <X size={20} />
           </button>

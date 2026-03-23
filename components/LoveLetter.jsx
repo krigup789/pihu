@@ -84,7 +84,10 @@ export default function LoveLetter() {
   //   new Audio("/music.mp3").play();
 
   return (
-    <section className="py-28 px-4 text-white text-center relative shadow-[0_0_40px_rgba(255,105,180,0.5)] rounded-xl">
+    <section
+      id="Love"
+      className="py-28 px-4 text-white text-center relative shadow-[0_0_40px_rgba(255,105,180,0.5)] rounded-xl"
+    >
       {/* Background glow */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-pink-500/20 via-transparent to-transparent" />
 
@@ -146,7 +149,7 @@ export default function LoveLetter() {
             />
 
             <p className="mt-6 text-pink-400 font-semibold">
-              — Yours, always 💛
+              — Yours, always 💜
             </p>
           </motion.div>
         )}

@@ -46,7 +46,7 @@ export default function Gallery() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section className="py-24 px-4 text-white">
+    <section id="Gallery" className="py-24 px-4 text-white">
       {/* Heading */}
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold">Our Memories 📸</h2>
