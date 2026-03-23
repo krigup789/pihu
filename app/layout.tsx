@@ -63,8 +63,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="bg-black text-white relative">
+    <html lang="en" suppressHydrationWarning>
+      <body className="bg-black text-white relative scroll-smooth">
         {/* 💖 Global Hearts Background */}
         <div className="fixed inset-0 -z-10 pointer-events-none">
           <FloatingHearts />

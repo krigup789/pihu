@@ -17,6 +17,7 @@ export default function Page() {
 
   const [password, setPassword] = useState("");
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
   const handleSubmit = (e: FormEvent) => {
@@ -29,6 +30,12 @@ export default function Page() {
       setError("Wrong password 😅");
     }
   };
+
+  useEffect(() => {
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "instant" });
+    }, 0);
+  }, []);
 
   if (!isAuthenticated) {
     return (
@@ -55,9 +62,9 @@ export default function Page() {
           </p>
 
           {/* Input */}
-          <div className="mt-6">
+          <div className="relative mt-6">
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               placeholder="Enter password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -66,6 +73,13 @@ export default function Page() {
                        focus:border-pink-500 focus:ring-2 focus:ring-pink-500/40
                        transition-all"
             />
+            <button
+              type="button"
+              onClick={() => setShowPassword(!showPassword)}
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
+            >
+              {showPassword ? "🙈" : "👁️"}
+            </button>
           </div>
 
           {/* Error */}
