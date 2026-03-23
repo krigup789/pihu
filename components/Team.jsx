@@ -27,7 +27,7 @@ export default function Team() {
   return (
     <section
       id="Team"
-      className="py-24 px-4 text-white border-pink-400 shadow-[0_0_25px_rgba(255,105,180,0.5)] rounded-xl"
+      className="py-24 px-4 text-white border-pink-400 rounded-xl"
     >
       {/* Heading */}
       <div className="text-center mb-16">
@@ -46,9 +46,8 @@ export default function Team() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ delay: index * 0.1 }}
             whileHover={{ scale: 1.05 }}
-            className={`rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 shadow-lg text-center ${
-              person.id === 3 ? "shadow-pink-500/30" : ""
-            }`}
+            className={`rounded-2xl overflow-hidden bg-white/5 backdrop-blur-md border border-white/10 shadow-lg text-center shadow-lg hover:shadow-pink-500/20 transition'
+              `}
           >
             {/* Image */}
             <div className="overflow-hidden">

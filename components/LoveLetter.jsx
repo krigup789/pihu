@@ -77,25 +77,49 @@
 import { useState, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { TypeAnimation } from "react-type-animation";
+import { useEffect } from "react";
 
 export default function LoveLetter() {
   const [open, setOpen] = useState(false);
-  const audioRef = useRef(null);
-  //   new Audio("/music.mp3").play();
+  const letterRef = useRef(null);
+  const [showEnvelope, setShowEnvelope] = useState(true);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (open && letterRef.current && !letterRef.current.contains(e.target)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [open]);
 
   return (
     <section
       id="Love"
       className="py-28 px-4 text-white text-center relative shadow-[0_0_40px_rgba(255,105,180,0.5)] rounded-xl"
     >
+      <style>{`
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+          transform: scale(1);
+        }
+      }
+      `}</style>
       {/* Background glow */}
       <div className="absolute inset-0 -z-10 bg-gradient-to-b from-pink-500/20 via-transparent to-transparent" />
 
       {/* ❤️ Envelope */}
-      {!open && (
+      {showEnvelope && (
         <div
-          className="flex justify-center cursor-pointer"
+          className="flex justify-center cursor-pointer transition-all duration-700 opacity-0 scale-95 animate-[fadeIn_0.7s_forwards]"
           onClick={() => {
+            setShowEnvelope(false); // hide envelope immediately
             setOpen(true);
           }}
         >
@@ -105,9 +129,10 @@ export default function LoveLetter() {
 
             {/* Flap */}
             <motion.div
+              ref={letterRef}
               initial={{ rotateX: 0 }}
               animate={{ rotateX: open ? -180 : 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: "easeInOut" }}
               className="absolute top-0 left-0 w-full h-1/2 bg-pink-600 origin-top rounded-t-lg"
               style={{ transformStyle: "preserve-3d" }}
             />
@@ -125,11 +150,29 @@ export default function LoveLetter() {
         {open && (
           <motion.div
             initial={{ opacity: 0, y: 50, scale: 0.9 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.6 }}
+            animate={{
+              opacity: open ? 1 : 0,
+              y: open ? 0 : 50,
+              scale: open ? 1 : 0.9,
+            }}
+            transition={{ duration: 0.6, delay: open ? 0.4 : 0 }}
+            exit={{ opacity: 0, y: 40, scale: 0.9 }}
             className="mt-12 max-w-2xl mx-auto bg-white/5 backdrop-blur-md p-8 rounded-2xl border border-white/10 shadow-xl"
           >
+            <button
+              onClick={() => {
+                setOpen(false);
+                setOpen(false);
+
+                // ⏳ delay envelope return
+                setTimeout(() => {
+                  setShowEnvelope(true);
+                }, 1000); // match your exit animation duration
+              }}
+              className="absolute top-4 right-4 text-white bg-white/10 p-2 rounded-full"
+            >
+              ✖
+            </button>
             <TypeAnimation
               sequence={[
                 `I don’t know how to say everything perfectly… but I know that whatever we have is real.

@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 export default function Footer() {
   return (
     <motion.footer
-      className="bg-white/6 border-t border-white/6 pt-10 text-gray-300 shadow-[0_0_30px_rgba(255,105,180,0.2)]"
+      className="bg-white/6 border-t border-white/6 pt-10 text-gray-300"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       viewport={{ once: true }}

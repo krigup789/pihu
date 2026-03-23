@@ -49,10 +49,7 @@ export default function VideoSection() {
   };
 
   return (
-    <section
-      id="Video"
-      className="py-24 px-4 text-white hover:shadow-[0_0_30px_rgba(255,105,180,0.4)] transition-shadow duration-300 rounded-xl"
-    >
+    <section id="Video" className="py-24 px-4 text-white rounded-xl">
       {/* Heading */}
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold">Our Moments 🎥</h2>
@@ -67,7 +64,7 @@ export default function VideoSection() {
           <motion.div
             key={item.id}
             whileHover={{ scale: 1.05 }}
-            className="relative group cursor-pointer rounded-xl overflow-hidden"
+            className="relative group cursor-pointer rounded-xl overflow-hidden  shadow-lg hover:shadow-pink-500/20 transition"
             onClick={() => handleOpenVideo(item)}
           >
             {/* Thumbnail */}

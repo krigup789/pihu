@@ -37,7 +37,7 @@ const lovePoints = [
 
 export default function Testimonials() {
   return (
-    <section className="py-24 px-4 text-white hover:shadow-[0_0_30px_rgba(255,105,180,0.4)] transition-shadow duration-300 rounded-xl">
+    <section className="py-24 px-4 text-white rounded-xl">
       {/* Heading */}
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-4xl font-bold">
