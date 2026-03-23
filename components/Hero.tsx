@@ -5,6 +5,7 @@ import { useEffect, useState, useRef } from "react";
 
 export default function Hero() {
   const audioRef = useRef<HTMLAudioElement>(null);
+  const sliderRef = useRef<HTMLDivElement>(null);
 
   const trustedUserImages = [
     "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=50",
@@ -54,6 +55,24 @@ export default function Hero() {
 
     setBgIndex(current);
   }, [current, hasStarted]);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (
+        hasStarted &&
+        sliderRef.current &&
+        !sliderRef.current.contains(e.target as Node)
+      ) {
+        setHasStarted(false); // 🔥 remove background
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [hasStarted]);
 
   return (
     <>
@@ -199,7 +218,10 @@ export default function Hero() {
               </motion.div> */}
 
               <motion.div className="rounded-3xl overflow-hidden border border-white/6 shadow-2xl bg-linear-to-b from-black/50 to-transparent">
-                <div className="relative aspect-16/10 bg-gray-900 overflow-hidden">
+                <div
+                  ref={sliderRef}
+                  className="relative aspect-16/10 bg-gray-900 overflow-hidden"
+                >
                   {/* 🔥 Slider */}
                   <div
                     className="flex transition-transform duration-500 ease-in-out h-full"
