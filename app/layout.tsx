@@ -69,7 +69,7 @@ export default function RootLayout({
         <div className="fixed inset-0 -z-10 pointer-events-none">
           <FloatingHearts />
         </div>
-        {/* <AIChat /> */}
+        <AIChat />
         <MusicPlayer />
         <SoftBackdrop />
         <LenisScroll />

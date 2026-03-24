@@ -62,7 +62,7 @@ export default function MusicPlayer() {
       {/* 🎧 Button */}
       <button
         onClick={toggleMusic}
-        className="fixed bottom-8 right-5 z-50 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-white"
+        className="fixed bottom-8 right-24 z-50 bg-white/20 backdrop-blur-md px-4 py-2 rounded-full text-white"
       >
         {playing ? "Pause 🎵" : "Play 🎵"}
       </button>
