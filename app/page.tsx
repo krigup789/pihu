@@ -11,6 +11,8 @@ import Team from "@/components/Team";
 import Faq from "@/components/Faq";
 import { useEffect, useState, FormEvent } from "react";
 import FloatingHearts from "@/components/FloatingHearts";
+import AIChat from "@/components/AIChat";
+import MusicPlayer from "@/components/MusicPlayer";
 
 export default function Page() {
   const CORRECT_PASSWORD = "chiku i love you";
@@ -122,6 +124,8 @@ export default function Page() {
       <Testimonials />
       <Team />
       <Faq />
+      <AIChat />
+      <MusicPlayer />
     </>
   );
 }

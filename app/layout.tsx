@@ -5,9 +5,7 @@ import Navbar from "@/components/Navbar";
 import SoftBackdrop from "@/components/SoftBackdrop";
 import LenisScroll from "@/components/lenis";
 import { Metadata } from "next";
-import MusicPlayer from "@/components/MusicPlayer";
 import FloatingHearts from "@/components/FloatingHearts";
-import AIChat from "@/components/AIChat";
 
 const outfit = Outfit({
   variable: "--font-sans",
@@ -69,8 +67,6 @@ export default function RootLayout({
         <div className="fixed inset-0 -z-10 pointer-events-none">
           <FloatingHearts />
         </div>
-        <AIChat />
-        <MusicPlayer />
         <SoftBackdrop />
         <LenisScroll />
         <Navbar />
