@@ -53,10 +53,15 @@ export default function Testimonials() {
         {lovePoints.map((item, index) => (
           <motion.div
             key={item.id}
-            initial={{ opacity: 0, y: 40 }}
+            initial={{ opacity: 0, y: 100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            // transition={{ delay: index * 0.1 }}
-            // whileHover={{ scale: 1.05 }}
+            viewport={{ once: true }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.15,
+              type: "spring",
+              stiffness: 120,
+            }}
             className="bg-white/3 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center shadow-lg hover:shadow-pink-500/20 transition"
           >
             {/* Main text */}
