@@ -141,7 +141,7 @@ export default function Hero() {
               >
                 This is my lovely sweetheart pihuu…
                 <br />
-                <span className="bg-clip-text text-transparent bg-linear-to-r from-indigo-300 to-indigo-400">
+                <span className="bg-clip-text text-purple-500">
                   and memories with her❤️
                 </span>
               </motion.h1>

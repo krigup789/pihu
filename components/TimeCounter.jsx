@@ -77,86 +77,70 @@ export default function TimeCounter() {
   }, []);
 
   return (
-    <section className="py-24 px-4 text-white text-center">
+    <section className="py-28 px-4 text-white text-center relative z-10">
       {/* Heading */}
-      <h2 className="text-3xl md:text-4xl font-bold mb-12">
-        Time We’ve Spent Together ⏳
-      </h2>
+      <div className="text-center mb-16">
+        <h2 className="text-3xl md:text-4xl font-bold">
+          Time We’ve Spent Together ⏳
+        </h2>
+      </div>
 
       {/* Grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-4 gap-6 max-w-6xl mx-auto">
-        {/* YEARS */}
-        <motion.div className="card">
-          <h3 className="number">{time.years}</h3>
-          <p>Years ❤️</p>
-        </motion.div>
+      <div className="grid grid-cols-2 md:grid-cols-4 pt-5 gap-6 max-w-6xl mx-auto">
+        {[
+          { value: time.years, label: "Years ❤️" },
+          { value: time.months, label: "Months 💖" },
+          { value: time.days, label: "Days 💫" },
+          { value: time.totalHours, label: "Hours 💬" },
+        ].map((item, index) => (
+          <motion.div
+            key={index}
+            whileHover={{ scale: 1.08 }}
+            className="relative p-6 md:p-8 rounded-2xl overflow-hidden
+            bg-white/3 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center shadow-lg hover:shadow-pink-500/20 transition"
+          >
+            {/* ✨ Gradient Glow Border */}
+            <div className="absolute inset-0 rounded-2xl bg-transparent hover:opacity-100 transition duration-300 blur-xl" />
 
-        {/* MONTHS */}
-        <motion.div className="card">
-          <h3 className="number">{time.months}</h3>
-          <p>Months 💖</p>
-        </motion.div>
+            {/* 🪞 Glass Reflection */}
+            <div className="absolute inset-0 bg-transparent pointer-events-none" />
 
-        {/* DAYS */}
-        <motion.div className="card">
-          <h3 className="number">{time.days}</h3>
-          <p>Days 💫</p>
-        </motion.div>
+            {/* Content */}
+            <div className="relative z-10">
+              <motion.h3
+                animate={{ scale: [1, 1.15, 1] }}
+                transition={{ repeat: Infinity, duration: 1.6 }}
+                className="text-3xl md:text-5xl font-bold text-purple-500"
+              >
+                {item.value}
+              </motion.h3>
 
-        {/* HOURS */}
-        <motion.div className="card">
-          <h3 className="number">{time.totalHours}</h3>
-          <p>Hours 💬</p>
-        </motion.div>
+              <p className="text-gray-300 mt-3 text-sm md:text-base">
+                {item.label}
+              </p>
+            </div>
+          </motion.div>
+        ))}
       </div>
 
       {/* 💍 ANNIVERSARY COUNTDOWN */}
       <motion.div
-        className="mt-16 p-6 rounded-2xl bg-[#1a1230] border border-purple-500/30 shadow-[0_0_40px_rgba(124,58,237,0.5)] inline-block"
-        animate={{ scale: [1, 1.05, 1] }}
-        transition={{ repeat: Infinity, duration: 2 }}
+        className="mt-20 px-8 py-6 rounded-2xl inline-block relative z-10 overflow-hidden
+        bg-transparent backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center shadow-lg hover:shadow-pink-500/20 transition"
+        animate={{ scale: [1, 1.15, 1] }}
+        transition={{ repeat: Infinity, duration: 1.6 }}
       >
-        <p className="text-gray-400 text-sm">Next Anniversary In 💍</p>
-        <h3 className="text-2xl font-bold text-purple-400 mt-2">
+        {/* Glow */}
+        <div className="absolute inset-0 bg-transparent blur-2xl" />
+
+        <p className="text-gray-400 text-sm tracking-wide">
+          Next Anniversary In 💍
+        </p>
+
+        <h3 className="text-2xl md:text-3xl font-bold text-purple-500 mt-2">
           {time.countdown}
         </h3>
       </motion.div>
-
-      {/* Styles */}
-      <style jsx>{`
-        .card {
-          padding: 2rem;
-          border-radius: 1rem;
-          background: #1a1230;
-          border: 1px solid #2a1f4a;
-          box-shadow: 0 0 30px rgba(124, 58, 237, 0.3);
-          transition: 0.3s;
-        }
-
-        .card:hover {
-          transform: scale(1.05);
-        }
-
-        .number {
-          font-size: 2.5rem;
-          font-weight: bold;
-          color: #a78bfa;
-          text-shadow: 0 0 10px rgba(124, 58, 237, 0.8);
-          animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-          0% {
-            transform: scale(1);
-          }
-          50% {
-            transform: scale(1.15);
-          }
-          100% {
-            transform: scale(1);
-          }
-        }
-      `}</style>
     </section>
   );
 }

@@ -6,7 +6,6 @@ import { X } from "lucide-react";
 
 const messages = [
   "Tum meri life ka best part ho ❤️",
-  "Sach bolu toh… main tumhare bina imagine bhi nahi kar sakta 🥺",
   "Har din tumhare saath aur special lagta hai 💖",
   "Tum ho toh sab perfect lagta hai ✨",
   "Mujhe tumhari har choti baat pasand hai 😄",
@@ -31,7 +30,7 @@ export default function SurpriseSection() {
         onClick={handleOpen}
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.95 }}
-        className="px-8 py-3 rounded-full bg-gradient-to-r from-purple-600 to-pink-500 shadow-[0_0_30px_rgba(236,72,153,0.6)] text-white font-semibold"
+        className="px-8 py-3 rounded-full bg-linear-to-r from-purple-600 to-pink-500 shadow-[0_0_30px_rgba(236,72,153,0.6)] text-white font-semibold"
       >
         Click only if you love me 😏
       </motion.button>

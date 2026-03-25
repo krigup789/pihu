@@ -7,10 +7,10 @@ import MemoryMarquee from "@/components/MemoryMarquee";
 import VideoSection from "@/components/VideoSection";
 import LoveLetter from "@/components/LoveLetter";
 import Testimonials from "@/components/Testimonials";
-import TimeCounter from "@/components/TimeCounter";
-import SurpriseSection from "@/components/SurpriseSection";
 import Team from "@/components/Team";
 import Faq from "@/components/Faq";
+import SurpriseSection from "@/components/SurpriseSection";
+import TimeCounter from "@/components/TimeCounter";
 import { useEffect, useState, FormEvent } from "react";
 import FloatingHearts from "@/components/FloatingHearts";
 import AIChat from "@/components/AIChat";
@@ -124,7 +124,6 @@ export default function Page() {
       <VideoSection />
       <LoveLetter />
       <Testimonials />
-
       <Team />
       <Faq />
       <TimeCounter />

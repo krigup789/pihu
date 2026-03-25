@@ -85,7 +85,7 @@ export default function Timeline() {
         <motion.div
           style={{ height }}
           className="hidden md:block absolute left-1/2 top-0 -translate-x-1/2 w-1 
-                    bg-gradient-to-b from-purple-500 via-purple-400 to-transparent
+                    bg-linear-to-b from-purple-500 via-purple-400 to-transparent
                     shadow-[0_0_20px_rgba(124,58,237,0.6)]"
         />
         <motion.div
