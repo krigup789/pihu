@@ -58,7 +58,7 @@ export default function MemoryMarquee() {
         onMouseLeave={() => setStopScroll(false)}
       >
         {/* Left fade */}
-        <div className="absolute left-0 top-0 h-full w-16 z-10 pointer-events-none bg-gradient-to-r from-black to-transparent" />
+        <div className="absolute left-0 top-0 h-full w-16 z-10 pointer-events-none bg-gradient-to-r from-transparent to-transparent" />
 
         {/* Scroll */}
         <div
@@ -93,7 +93,7 @@ export default function MemoryMarquee() {
         </div>
 
         {/* Right fade */}
-        <div className="absolute right-0 top-0 h-full w-16 z-10 pointer-events-none bg-gradient-to-l from-black to-transparent" />
+        <div className="absolute right-0 top-0 h-full w-16 z-10 pointer-events-none bg-gradient-to-l from-transparent to-transparent" />
       </div>
       {/* 🔥 MODAL */}
       {selectedImage && (

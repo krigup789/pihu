@@ -7,6 +7,8 @@ import MemoryMarquee from "@/components/MemoryMarquee";
 import VideoSection from "@/components/VideoSection";
 import LoveLetter from "@/components/LoveLetter";
 import Testimonials from "@/components/Testimonials";
+import TimeCounter from "@/components/TimeCounter";
+import SurpriseSection from "@/components/SurpriseSection";
 import Team from "@/components/Team";
 import Faq from "@/components/Faq";
 import { useEffect, useState, FormEvent } from "react";
@@ -122,8 +124,11 @@ export default function Page() {
       <VideoSection />
       <LoveLetter />
       <Testimonials />
+
       <Team />
       <Faq />
+      <TimeCounter />
+      <SurpriseSection />
       <AIChat />
       <MusicPlayer />
     </>

@@ -14,7 +14,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Pihu - A Collection of Unforgettable Moments | PrebuiltUI",
+    default: "Pihu - My Lovely Sweetheart",
     template: "%s | Pihu",
   },
   description:
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   publisher: "PrebuiltUI",
 
   openGraph: {
-    title: "Pihu - A Collection of Unforgettable Moments | PrebuiltUI",
+    title: "Pihu - My Lovely Sweetheart",
     description:
       "A small collection of the moments that mean the most to me, because every moment with you is unforgettable ❤️ Made just for you, with all my love ❤️",
     siteName: "PrebuiltUI",
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Pihu - A Collection of Unforgettable Moments | PrebuiltUI",
+    title: "Pihu - My Lovely Sweetheart",
     description:
       "A small collection of the moments that mean the most to me, because every moment with you is unforgettable ❤️ Made just for you, with all my love ❤️",
     creator: "@prebuiltui",

@@ -55,9 +55,9 @@ export default function Testimonials() {
             key={item.id}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: index * 0.1 }}
-            whileHover={{ scale: 1.05 }}
-            className="bg-white/5 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center shadow-lg hover:shadow-pink-500/20 transition"
+            // transition={{ delay: index * 0.1 }}
+            // whileHover={{ scale: 1.05 }}
+            className="bg-white/3 backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center shadow-lg hover:shadow-pink-500/20 transition"
           >
             {/* Main text */}
             <h3 className="text-xl font-semibold mb-2">{item.text}</h3>

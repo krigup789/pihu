@@ -13,7 +13,7 @@ export default function Footer() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="flex justify-center md:flex-row items-center md:items-start justify-between gap-10 py-10 border-b border-white/10 text-center md:text-left">
           <div>
-            <img src="/logo.png" alt="logo" className="h-10" />
+            <img src="/logo.png" alt="logo" className="h-15" />
             <p className="max-w-[410px] mt-6 text-lg leading-relaxed">
               This is not just a website… it’s a collection of our memories,
               moments, and everything I feel for you ❤️
