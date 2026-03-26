@@ -4,12 +4,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 
-const messages = [
-  "Tum meri life ka best part ho ❤️",
-  "Har din tumhare saath aur special lagta hai 💖",
-  "Mujhe tumhari har choti baat pasand hai 😄",
-  "I Love You My Lovely Sweetheart Pihuu ❤️",
-];
+const messages = ["I Love You My Lovely Sweetheart Pihuu ❤️"];
 
 export default function SurpriseSection() {
   const [open, setOpen] = useState(false);

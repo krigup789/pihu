@@ -20,16 +20,16 @@ August 2024 → Kimadi Waterfall
 → Peaceful moment, nature + tum
 → One of the most calming memories.
 
-September 2024
+29 September 2024
 → Anjali & Mynk ke saath Naag Mandir
 → Simple day, but special.
 
-krish Birthday 🎂
+15 0ct 2024 krish Birthday 🎂
 → Tumne t-shirt gift ki
 → Aur chuchu bhi diya 🥰
 → Genuine effort = special feeling.
 
-November 2024 → Santla Devi (Anshika’s birthday)
+8 November 2024 → Santla Devi (Anshika’s birthday)
 → Tum gussa ho gayi thi 😅
 → Maine pehli baar tumhara haath pakad ke bithaya
 → Tum black dress + diamond tops me… unforgettable moment.
@@ -118,20 +118,20 @@ Bus Journey (Return to Dehradun)
 - rishikesh gye hum , mynk or anshika ke sath.
 - tum black top pehni thi uffff bohot pyari lgri thi ❤️.
 
-12 jan 2026
+12 january 2026
 - first time video call.
 
 15 january 2026
 - second time RB
 
-16 jan 2026
+16 january 2026
 - frist time #-{\|=
 
-12 feb 2026 
+12 February 2026 
 - third time RB
 - best sukoon bhara time with pihuu.
 
-14 feb 2026
+14 February 2026
 - Aaj Valentine's day per hum park gye the.
 - Pihu Chocolate layi thi mere liye.
 
