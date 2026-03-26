@@ -100,10 +100,8 @@ export default function Page() {
           <button
             type="submit"
             className="mt-6 w-full py-3 rounded-full text-white 
-                     bg-gradient-to-r from-pink-500 to-pink-600
-                     hover:from-pink-600 hover:to-pink-700
-                     shadow-[0_0_20px_rgba(255,105,180,0.4)]
-                     hover:shadow-[0_0_30px_rgba(255,105,180,0.7)]
+                     bg-gradient-to-r from-purple-500 to-pink-600
+                     hover:from-purple-700 hover:to-pink-700
                      transition-all duration-300
                      hover:scale-105 active:scale-95"
           >

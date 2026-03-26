@@ -18,46 +18,6 @@ export default function AIChat() {
   const [open, setOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // const sendMessage = async () => {
-  //   if (!input.trim() || loading) return;
-
-  //   const userMessage: Message = {
-  //     role: "user",
-  //     content: input,
-  //   };
-
-  //   setMessages((prev) => [...prev, userMessage]);
-  //   setInput("");
-  //   setLoading(true);
-
-  //   try {
-  //     const response = await axios.post(
-  //       `${process.env.NEXT_PUBLIC_API_URL}/chat`,
-  //       null,
-  //       {
-  //         params: { message: input },
-  //       },
-  //     );
-
-  //     const aiMessage: Message = {
-  //       role: "assistant",
-  //       content: response.data.reply,
-  //     };
-
-  //     setMessages((prev) => [...prev, aiMessage]);
-  //   } catch (error) {
-  //     setMessages((prev) => [
-  //       ...prev,
-  //       {
-  //         role: "assistant",
-  //         content:
-  //           "### Connection Error\n\nUnable to connect to backend server.\n\nPlease try again later.",
-  //       },
-  //     ]);
-  //   }
-
-  //   setLoading(false);
-  // };
   const sendMessage = async () => {
     if (!input.trim()) return;
 
@@ -253,7 +213,7 @@ export default function AIChat() {
           transition-all duration-300
           hover:scale-105 active:scale-95"
             >
-              Send 💜
+              Send 💖
             </button>
           </div>
         </div>

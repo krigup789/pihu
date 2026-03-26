@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 export default function TimeCounter() {
-  const startDate = new Date("2024-06-28T00:00:00");
+  const startDate = new Date("2025-08-29T00:00:00");
+  const Birthday = new Date("2004-06-16T00:00:00");
 
   const [time, setTime] = useState({
     years: 0,
@@ -12,6 +13,7 @@ export default function TimeCounter() {
     days: 0,
     totalHours: 0,
     countdown: "",
+    Birthdaycountdown: "",
   });
 
   useEffect(() => {
@@ -39,8 +41,31 @@ export default function TimeCounter() {
       }
 
       // 🔥 TOTAL HOURS
-      const diff = now - startDate;
+      const diff = now - Birthday;
       const totalHours = Math.floor(diff / (1000 * 60 * 60));
+
+      // 💍 NEXT BirthDay
+      const nextBirthday = new Date(
+        now.getFullYear(),
+        Birthday.getMonth(),
+        Birthday.getDate(),
+      );
+
+      if (nextBirthday < now) {
+        nextBirthday.setFullYear(now.getFullYear() + 1);
+      }
+
+      const BirthdaydiffAnniv = nextBirthday - now;
+
+      const Birthdayd = Math.floor(BirthdaydiffAnniv / (1000 * 60 * 60 * 24));
+      const Birthdayh = Math.floor((BirthdaydiffAnniv / (1000 * 60 * 60)) % 24);
+      const Birthdaym = Math.floor((BirthdaydiffAnniv / (1000 * 60)) % 60);
+
+      const Birthdaycountdown = `${Birthdayd}d ${Birthdayh}h ${Birthdaym}m`;
+
+      // 🔥 TOTAL HOURS
+      const Birthdaydiff = now - startDate;
+      const BirthdaytotalHours = Math.floor(diff / (1000 * 60 * 60));
 
       // 💍 NEXT ANNIVERSARY
       const nextAnniversary = new Date(
@@ -67,6 +92,7 @@ export default function TimeCounter() {
         days,
         totalHours,
         countdown,
+        Birthdaycountdown,
       });
     };
 
@@ -122,25 +148,45 @@ export default function TimeCounter() {
           </motion.div>
         ))}
       </div>
-
-      {/* 💍 ANNIVERSARY COUNTDOWN */}
-      <motion.div
-        className="mt-20 px-8 py-6 rounded-2xl inline-block relative z-10 overflow-hidden
+      <div className="grid grid-cols-2 md:grid-cols-2 p-5 gap-10 max-w-6xl mx-auto">
+        {/* 💍 ANNIVERSARY COUNTDOWN */}
+        <motion.div
+          className="mt-20 px-8 py-6 rounded-2xl inline-block relative z-10 overflow-hidden
         bg-transparent backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center shadow-lg hover:shadow-pink-500/20 transition"
-        animate={{ scale: [1, 1.15, 1] }}
-        transition={{ repeat: Infinity, duration: 1.6 }}
-      >
-        {/* Glow */}
-        <div className="absolute inset-0 bg-transparent blur-2xl" />
+          animate={{ scale: [1, 1.15, 1] }}
+          transition={{ repeat: Infinity, duration: 1.6 }}
+        >
+          {/* Glow */}
+          <div className="absolute inset-0 bg-transparent blur-2xl" />
 
-        <p className="text-gray-400 text-sm tracking-wide">
-          Next Anniversary In 💍
-        </p>
+          <p className="text-gray-400 text-sm tracking-wide">
+            Next Relationship Anniversary In 💍
+          </p>
 
-        <h3 className="text-2xl md:text-3xl font-bold text-purple-500 mt-2">
-          {time.countdown}
-        </h3>
-      </motion.div>
+          <h3 className="text-2xl md:text-3xl font-bold text-purple-500 mt-2">
+            {time.countdown}
+          </h3>
+        </motion.div>
+
+        {/* 💍 Birthday COUNTDOWN */}
+        <motion.div
+          className="mt-20 px-8 py-6 rounded-2xl inline-block relative z-10 overflow-hidden
+        bg-transparent backdrop-blur-md p-6 rounded-2xl border border-white/10 text-center shadow-lg hover:shadow-pink-500/20 transition"
+          animate={{ scale: [1, 1.15, 1] }}
+          transition={{ repeat: Infinity, duration: 1.6 }}
+        >
+          {/* Glow */}
+          <div className="absolute inset-0 bg-transparent blur-2xl" />
+
+          <p className="text-gray-400 text-sm tracking-wide">
+            Days left in Pihu's BirthDay ❤️
+          </p>
+
+          <h3 className="text-2xl md:text-3xl font-bold text-purple-500 mt-2">
+            {time.Birthdaycountdown}
+          </h3>
+        </motion.div>
+      </div>
     </section>
   );
 }

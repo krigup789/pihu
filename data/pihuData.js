@@ -3,75 +3,145 @@ export const pihuData = `
 
 
 💛 Our Story – Me & Pihu (Bullet Points)
-28 June 2024 → First time met
-→ Tab kuch special nahi laga… par yahi se sab start hua
-July 2024 → First late night chat
-→ Baat karte karte raat se subah 4 baje ho gaye
-→ Yahin se real connection start hua
+28 June 2024 → First time met.
+→ Tab kuch special nahi laga… par yahi se sab start hua.
+
+ 9 July 2024 → First late night chat
+→ Baat karte karte raat se subah 4 baje ho gaye.
+→ Yahin se real connection start hua.
+
 Trips Phase 🌄
 → Mussoorie trip
 → Paonta Sahib trip
 → FRI visit
-→ Har jagah memories banne lagi
+→ Har jagah memories banne lagi.
+
 August 2024 → Kimadi Waterfall
 → Peaceful moment, nature + tum
-→ One of the most calming memories
+→ One of the most calming memories.
+
 September 2024
 → Anjali & Mynk ke saath Naag Mandir
-→ Simple day, but special
-My Birthday 🎂
+→ Simple day, but special.
+
+krish Birthday 🎂
 → Tumne t-shirt gift ki
 → Aur chuchu bhi diya 🥰
-→ Genuine effort = special feeling
+→ Genuine effort = special feeling.
+
 November 2024 → Santla Devi (Anshika’s birthday)
 → Tum gussa ho gayi thi 😅
 → Maine pehli baar tumhara haath pakad ke bithaya
-→ Tum black dress + diamond tops me… unforgettable moment
+→ Tum black dress + diamond tops me… unforgettable moment.
+
 2 Months Gap 🖤
 → Bohot difficult phase
 → Tumhari bohot yaad aati thi
+
 1 January 2025
 → Maine tumhe wish kiya
-→ Par tum thodi door thi / ignore kar rahi thi
+→ Par tum thodi door thi / ignore kar rahi thi.
+
 February 2025
 → Tumne fir se baat karni start ki
-→ Slowly sab normal hone laga
+→ Slowly sab normal hone laga.
+
 March 2025 → Mela 🎡
 → Anshika & Mynk ke saath
-→ Bohot masti, genuine happiness
-April 2025 → Dhanolti Trip 🏔️
+→ Bohot masti, Jhula Jhule hum genuine happiness.
+
+10 April 2025 → Dhanolti Trip 🏔️
 → Best trip till date
 → Eco Park, Surkunda Devi
-→ Unforgettable moments
+→ Unforgettable moments.
+
 Bus Journey (Return to Dehradun)
 → Yahin se feelings aani start hui
 → Par thodi confusing thi
-10 May 2025 (approx)
-→ First time letters exchange 💌
-→ Turning point
+
+10 May 2025
+→ First time letters exchange 💌 in naag mandir
+→ Turning point.
+
 17 May 2025
 → Thano + Mall of Dehradun
 → Tumhare liye tough phase
-→ I understood you more
+→ I understood you more.
+
 16 June 2025 – Tumhara Birthday 🎂
 → ISKCON mandir
 → Anshika ke ghar
 → Gandhi Park me cake cutting
 → Juyaal fast food
 → Maine tumhe ring gift ki 💍
+
 28 June 2025 (1 Year Completion)
 → Maine tumhe mana kar diya
-→ Biggest mistake of my life
+→ Biggest mistake of my life.
+
 14 July 2025
 → Mujhe laga main apni marzi se milne ja raha hoon 😅
 → Par actually tumhara plan tha mujhe bulane ka 😂
 → Comeback moment
+
 14 July – 28 August 2025
 → Maine bohot kuch feel kiya
-→ Emotions clear hone lage
+→ Emotions clear hone lage.
+
 29 August 2025
 → Maine tumhe dil se love letter diya ❤️
 → Real turning point
+- Starting of our Relationship.
+
+2 september 2025
+- tum pehli bar chiku ke ghar aayi
+- saaree pehni
+
+4 september 2025
+- hum memorial place gye
+- loan starting date
+- tumne to do do bvar loan pay kr dia tha.
+
+9 september 2025
+- second time ghar aayi
+- first time loan payment
+- first time Mug
+
+13 october 2025 
+- Our photoshoot
+
+14 october 2025
+- ufff our first unforgettable day (RB)❤️
+
+15 october 2025 
+- Krish's birthday
+- rishikesh gye hum , mynk or anshika ke sath.
+- tum black top pehni thi uffff bohot pyari lgri thi ❤️.
+
+12 jan 2026
+- first time video call.
+
+15 january 2026
+- second time RB
+
+16 jan 2026
+- frist time #-{\|=
+
+12 feb 2026 
+- third time RB
+- best sukoon bhara time with pihuu.
+
+14 feb 2026
+- Aaj Valentine's day per hum park gye the.
+- Pihu Chocolate layi thi mere liye.
+
+14 march 2026
+- aaj hum mele gye.
+- 4th time RB.
+
+
+
+
 Present ✨
 → Haan, uske baad bhi ups & downs aaye
 → Par ab ek baat clear hai:
@@ -113,11 +183,11 @@ Core Emotional Traits:
 Interests & Preferences:
 - Favorite Food: burger, kabab, band makkan, ice cream, fried momos and aloo ki sabji.
 - Favorite Drink: KitKat shake.
-- Favorite Color: Pure white.
+- Favorite Color: Pure white and now Black also.
 - Music: (Salaam aaya),  Haryanvi, Garhwali, Punjabi, sometimes Bengali.
 - Movies/Shows: K-dramas and romantic comedies.
-- Hobbies: Writing romantic and emotional poetry (shayari style).
-- Favorite Places: Ladakh, Vrindavan, Rishikesh during Aarti time.
+- Hobbies: Writing romantic and emotional poetry (shayari style), Painting.
+- Favorite Places: Ladakh, Vrindavan, Rishikesh during Aarti time, Every place with me 💖.
 
 Dreams & Goals:
 - Wants to become highly successful.

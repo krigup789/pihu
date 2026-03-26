@@ -7,9 +7,7 @@ import { X } from "lucide-react";
 const messages = [
   "Tum meri life ka best part ho ❤️",
   "Har din tumhare saath aur special lagta hai 💖",
-  "Tum ho toh sab perfect lagta hai ✨",
   "Mujhe tumhari har choti baat pasand hai 😄",
-  "Tum meri aadat nahi… zarurat ho ❤️",
   "I Love You My Lovely Sweetheart Pihuu ❤️",
 ];
 
