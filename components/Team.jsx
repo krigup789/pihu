@@ -7,7 +7,7 @@ const teamData = [
     id: 1,
     name: "Me 😎",
     role: "The one who fell for you ❤️",
-    image: "/pihu3.jpeg",
+    image: "/me.jpeg",
   },
   {
     id: 2,
@@ -19,7 +19,7 @@ const teamData = [
     id: 3,
     name: "Us Together ❤️",
     role: "A story still being written…",
-    image: "/pihu5.jpeg",
+    image: "/photoshoot_kd.jpeg",
   },
 ];
 
@@ -54,7 +54,7 @@ export default function Team() {
               <img
                 src={person.image}
                 alt={person.name}
-                className="w-full h-72 object-cover transition-transform duration-500 hover:scale-110"
+                className="w-full h-96 object-cover transition-transform duration-500 hover:scale-110"
               />
             </div>
 

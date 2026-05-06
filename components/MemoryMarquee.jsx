@@ -8,24 +8,37 @@ export default function MemoryMarquee() {
 
   const cardData = [
     {
-      title: "Our First Meeting ❤️",
       image: "/pihu_image.jpeg",
     },
     {
-      title: "Late Night Talks 🌙",
       image: "/pihu.jpeg",
     },
     {
-      title: "Dhanolti Trip 🏔️",
       image: "/pihu4.jpeg",
     },
     {
-      title: "Letters 💌",
       image: "/pihu5.jpeg",
     },
     {
-      title: "That Cute Planned Day 😄",
-      image: "/pihu_image.jpeg",
+      image: "/killer6.jpeg",
+    },
+    {
+      image: "/photoshoot2.jpeg",
+    },
+    {
+      image: "/farewell2.jpeg",
+    },
+    {
+      image: "/haldi.jpeg",
+    },
+    {
+      image: "/saree5.jpeg",
+    },
+    {
+      image: "/orange6.jpeg",
+    },
+    {
+      image: "/red2.jpeg",
     },
   ];
   const [selectedImage, setSelectedImage] = useState(null);
@@ -34,9 +47,7 @@ export default function MemoryMarquee() {
     <section className="py-20 text-white">
       {/* Heading */}
       <div className="text-center mb-10">
-        <h2 className="text-2xl md:text-3xl font-semibold">
-          Moments That Matter ❤️
-        </h2>
+        <h2 className="text-2xl md:text-3xl font-semibold">My fav Pics ❤️</h2>
       </div>
 
       <style>
@@ -73,7 +84,7 @@ export default function MemoryMarquee() {
               <div
                 key={index}
                 onClick={() => setSelectedImage(card)}
-                className="w-52 mx-4 h-72 relative group rounded-xl overflow-hidden cursor-pointer"
+                className="w-72 mx-4 h-96 relative group rounded-xl overflow-hidden cursor-pointer"
               >
                 {/* Image */}
                 <img
@@ -82,11 +93,11 @@ export default function MemoryMarquee() {
                 />
 
                 {/* Overlay */}
-                <div className="flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 transition-all duration-300 absolute inset-0 backdrop-blur-md bg-black/40">
+                {/* <div className="flex items-center justify-center px-4 opacity-0 group-hover:opacity-100 transition-all duration-300 absolute inset-0 backdrop-blur-md bg-black/40">
                   <p className="text-white text-sm font-semibold text-center">
                     {card.title}
                   </p>
-                </div>
+                </div> */}
               </div>
             ))}
           </div>

@@ -109,18 +109,7 @@ export default function Hero() {
                   mass: 1,
                 }}
               >
-                <div className="flex -space-x-2">
-                  {/* {trustedUserImages.map((src, i) => (
-                    <img
-                      key={i}
-                      src={src}
-                      alt={`Client ${i + 1}`}
-                      className="size-6 rounded-full border border-black/50"
-                      width={40}
-                      height={40}
-                    />
-                  ))} */}
-                </div>
+                <div className="flex -space-x-2"></div>
                 <span className="text-xl text-gray-200/90">
                   Just for you, with all my love ❤️
                 </span>
@@ -207,16 +196,6 @@ export default function Hero() {
                 delay: 0.5,
               }}
             >
-              {/* <motion.div className="rounded-3xl overflow-hidden border border-white/6 shadow-2xl bg-linear-to-b from-black/50 to-transparent">
-                <div className="relative aspect-16/10 bg-gray-900">
-                  <img
-                    src="/pihu_image.jpeg"
-                    alt="agency-work-preview"
-                    className="w-full h-full object-cover object-center"
-                  />
-                </div>
-              </motion.div> */}
-
               <motion.div className="rounded-3xl overflow-hidden border border-white/6 shadow-2xl bg-linear-to-b from-black/50 to-transparent">
                 <div
                   ref={sliderRef}

@@ -11,7 +11,7 @@ export default function Navbar() {
     { name: "My Pihu", href: "/#" }, // Hero
     { name: "Our Story", href: "/#About" },
     { name: "Our Journey", href: "/#Timeline" },
-    { name: "Moments", href: "/#Gallery" },
+    { name: "Gallery", href: "/#Gallery" },
     { name: "Love Letter", href: "/#Love" },
     // 🔥 NEW (external link)
     {

@@ -67,7 +67,8 @@ export const plansData = [
 export const faqData = [
   {
     question: "Who loves more? ❤️",
-    answer: "Me 😌 (but you’ll never accept it)",
+    answer:
+      "You = Me… but if I had to choose, it’s you, because you make me love you more every day 💖",
   },
   {
     question: "Favorite memory together? 🌸",

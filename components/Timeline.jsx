@@ -9,47 +9,47 @@ const timelineData = [
     title: "28 June 2024 ❤️",
     description:
       "The day it all started… a normal meeting that became something unforgettable.",
-    image: "/pihu_image.jpeg",
+    image: "/28_june.jpeg",
   },
   {
     id: 2,
-    title: "July – Late Night Talks 🌙",
+    title: "9 July – Late Night Talks 🌙",
     description:
       "That night we talked till 4 AM… and everything started changing.",
-    image: "/pihu.jpeg",
+    image: "/9_july.jpeg",
   },
   {
     id: 3,
     title: "Trips & Memories 🏔️",
     description:
       "Mussoorie, Paonta Sahib, FRI… every place became special with you.",
-    image: "/pihu3.jpeg",
+    image: "/mussorie.jpeg",
   },
   {
     id: 4,
-    title: "Dhanolti Trip 🌄",
+    title: "10 April – Dhanolti Trip 🌄",
     description:
       "One of the most peaceful and beautiful moments… just you, me, and nature ❤️",
-    image: "/pihu4.jpeg",
+    image: "/dhanolti.jpeg",
   },
   {
     id: 5,
     title: "10 May – Letters 💌",
     description:
       "The first time we expressed everything through letters… unforgettable.",
-    image: "/pihu5.jpeg",
+    image: "/10_may.jpeg",
   },
   {
     id: 6,
     title: "14 July 😄",
     description: "I thought it was random… but madam ji ka pura plan tha 😂",
-    image: "/pihu_image.jpeg",
+    image: "/14_july.jpeg",
   },
   {
     id: 7,
     title: "29 August 2025 ❤️",
     description: "The day I truly expressed my feelings… everything changed.",
-    image: "/pihu.jpeg",
+    image: "/28_aug.jpeg",
   },
 ];
 

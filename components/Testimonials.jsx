@@ -15,7 +15,7 @@ const lovePoints = [
   },
   {
     id: 3,
-    text: "Your laugh 😄",
+    text: "Your nature🌸",
     sub: "It’s my favorite sound",
   },
   {
