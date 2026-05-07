@@ -51,7 +51,7 @@ export default function About() {
 
           <p>Tumhare saath har chhota moment bhi special ban gaya 💖</p>
 
-          <p>
+          {/* <p>
             Phir kuch phases aise bhi aaye… jab sab thoda door ho gaya. Sach
             bolu toh woh time mere liye bohot tough tha.
           </p>
@@ -59,7 +59,7 @@ export default function About() {
           <p>
             Par phir dheere dheere sab wapas normal hone laga… aur har naye
             moment ke saath, main tumhe thoda aur samajhne laga.
-          </p>
+          </p> */}
 
           <p>
             Aur phir aaya 10 May… 💌 jab humne pehli baar ek dusre ko letters

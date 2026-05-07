@@ -75,11 +75,15 @@ export default function VideoSection() {
   };
 
   return (
-    <section id="Video" className="py-24 px-4 text-white relative z-10">
+    <section
+      id="Video"
+      className="py-24 px-4 text-white relative z-10"
+      onTouchStart={() => window.restoreMainMusic?.()}
+    >
       {/* Heading */}
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold bg-gradient-to-r from-purple-300 to-pink-300 bg-clip-text text-transparent">
-          Our Moments 🎥
+          Our Moments
         </h2>
 
         <p className="text-gray-400 mt-3">

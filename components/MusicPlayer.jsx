@@ -9,6 +9,15 @@ export default function MusicPlayer() {
   const toggleMusic = () => {
     if (!audioRef.current) return;
 
+    // 🎵 interaction music
+    const interactionMusic = document.getElementById("interaction-music");
+
+    // 🔥 stop interaction music
+    if (interactionMusic) {
+      interactionMusic.pause();
+      //interactionMusic.currentTime = 0;
+    }
+
     if (playing) {
       audioRef.current.pause();
       setPlaying(false);
@@ -19,22 +28,33 @@ export default function MusicPlayer() {
   };
 
   useEffect(() => {
-    const audio = audioRef.current;
-
-    if (!audio) return;
-
-    const onPlay = () => setPlaying(true);
-    const onPause = () => setPlaying(false);
-
-    audio.addEventListener("play", onPlay);
-    audio.addEventListener("pause", onPause);
-
-    return () => {
-      audio.removeEventListener("play", onPlay);
-      audio.removeEventListener("pause", onPause);
-    };
+    window.switchToInteractionMusic = switchToInteractionMusic;
+    window.restoreMainMusic = restoreMainMusic;
   }, []);
 
+  const switchToInteractionMusic = () => {
+    const bgMusic = document.getElementById("bg-music");
+    const interactionMusic = document.getElementById("interaction-music");
+
+    if (bgMusic && interactionMusic) {
+      bgMusic.pause();
+
+      interactionMusic.volume = 0.5;
+      interactionMusic.play().catch(() => {});
+    }
+  };
+
+  const restoreMainMusic = () => {
+    const bgMusic = document.getElementById("bg-music");
+    const interactionMusic = document.getElementById("interaction-music");
+
+    if (bgMusic && interactionMusic) {
+      interactionMusic.pause();
+
+      bgMusic.volume = 0.5;
+      bgMusic.play().catch(() => {});
+    }
+  };
   useEffect(() => {
     const audio = audioRef.current;
 
@@ -57,6 +77,9 @@ export default function MusicPlayer() {
       {/* 🎵 Audio */}
       <audio id="bg-music" ref={audioRef} loop preload="auto">
         <source src="/music2.mp3" type="audio/mpeg" />
+      </audio>
+      <audio id="interaction-music" loop preload="auto">
+        <source src="/music.mp3" type="audio/mpeg" />
       </audio>
 
       {/* 🎧 Button */}

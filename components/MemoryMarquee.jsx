@@ -44,7 +44,12 @@ export default function MemoryMarquee() {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <section className="py-20 text-white">
+    <section
+      className="py-20 text-white"
+      onMouseEnter={() => window.switchToInteractionMusic?.()}
+      onMouseLeave={() => window.restoreMainMusic?.()}
+      onTouchStart={() => window.switchToInteractionMusic?.()}
+    >
       {/* Heading */}
       <div className="text-center mb-10">
         <h2 className="text-2xl md:text-3xl font-semibold">My fav Pics ❤️</h2>

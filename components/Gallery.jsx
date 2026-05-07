@@ -150,30 +150,7 @@ function GalleryCard({
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition duration-500 z-10" />
 
         {/* 🔥 Slider */}
-        <motion.div
-          drag="x"
-          dragConstraints={{ left: 0, right: 0 }}
-          onDragStart={() => setIsDragging(true)}
-          onDragEnd={(e, info) => {
-            const threshold = 50;
-
-            // 👉 Swipe Left
-            if (info.offset.x < -threshold) {
-              setManualIndex((prev) => (prev + 1) % item.images.length);
-            }
-
-            // 👉 Swipe Right
-            if (info.offset.x > threshold) {
-              setManualIndex((prev) =>
-                prev === 0 ? item.images.length - 1 : prev - 1,
-              );
-            }
-
-            // 🔥 Return to auto mode after 5 sec
-            setTimeout(() => {
-              setIsDragging(false);
-            }, 5000);
-          }}
+        <div
           className="flex transition-transform duration-700 ease-in-out h-100 cursor-grab active:cursor-grabbing"
           style={{
             transform: `translateX(-${current * 100}%)`,
@@ -190,7 +167,7 @@ function GalleryCard({
               "
             />
           ))}
-        </motion.div>
+        </div>
 
         {/* 🌌 Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
@@ -269,7 +246,7 @@ function ImageSliderModal({ selectedImage, setSelectedImage }) {
         initial={{ scale: 0.85, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ type: "spring", stiffness: 120 }}
-        className="relative max-w-6xl w-full"
+        className="relative max-w-6xl w-96"
         onClick={(e) => e.stopPropagation()}
       >
         {/* ✨ Glow */}
@@ -289,7 +266,7 @@ function ImageSliderModal({ selectedImage, setSelectedImage }) {
                 src={img}
                 alt=""
                 className="
-                  w-full max-h-[85vh]
+                  w-96 max-h-[70vh]
                   object-cover shrink-0
                 "
               />
@@ -326,7 +303,13 @@ export default function Gallery() {
   }, [activeCard]);
 
   return (
-    <section id="Gallery" className="py-28 px-4 text-white relative z-10">
+    <section
+      id="Gallery"
+      className="py-28 px-4 text-white relative z-10"
+      onMouseEnter={() => window.switchToInteractionMusic?.()}
+      onMouseLeave={() => window.restoreMainMusic?.()}
+      onTouchStart={() => window.switchToInteractionMusic?.()}
+    >
       {/* 💖 Heading */}
       <div className="text-center mb-16">
         <h2

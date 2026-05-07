@@ -69,7 +69,11 @@ export default function Timeline() {
   );
 
   return (
-    <section id="Timeline" className="relative py-24 px-4 text-white">
+    <section
+      id="Timeline"
+      className="relative py-24 px-4 text-white"
+      onTouchStart={() => window.restoreMainMusic?.()}
+    >
       {/* Heading */}
       <div className="text-center mb-20">
         <h2 className="text-3xl md:text-4xl font-bold">Our Journey ❤️</h2>
