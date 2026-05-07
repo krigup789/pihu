@@ -246,7 +246,7 @@ function ImageSliderModal({ selectedImage, setSelectedImage }) {
         initial={{ scale: 0.85, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ type: "spring", stiffness: 120 }}
-        className="relative max-w-6xl w-96"
+        className="relative max-w-6xl w-80"
         onClick={(e) => e.stopPropagation()}
       >
         {/* ✨ Glow */}
@@ -266,7 +266,7 @@ function ImageSliderModal({ selectedImage, setSelectedImage }) {
                 src={img}
                 alt=""
                 className="
-                  w-96 max-h-[70vh]
+                  w-80 max-h-[70vh]
                   object-cover shrink-0
                 "
               />
