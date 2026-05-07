@@ -41,7 +41,7 @@ export default function TimeCounter() {
       }
 
       // 🔥 TOTAL HOURS
-      const diff = now - Birthday;
+      const diff = now - startDate;
       const totalHours = Math.floor(diff / (1000 * 60 * 60));
 
       // 💍 NEXT BirthDay
@@ -62,10 +62,6 @@ export default function TimeCounter() {
       const Birthdaym = Math.floor((BirthdaydiffAnniv / (1000 * 60)) % 60);
 
       const Birthdaycountdown = `${Birthdayd}d ${Birthdayh}h ${Birthdaym}m`;
-
-      // 🔥 TOTAL HOURS
-      const Birthdaydiff = now - startDate;
-      const BirthdaytotalHours = Math.floor(diff / (1000 * 60 * 60));
 
       // 💍 NEXT ANNIVERSARY
       const nextAnniversary = new Date(

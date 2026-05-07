@@ -25,8 +25,8 @@ const galleryData = [
       "/saree3.jpeg",
       "/saree4.jpeg",
       "/saree5.jpeg",
-      "/saree6.jpeg",
-      "/saree7.jpeg",
+      // "/saree6.jpeg",
+      // "/saree7.jpeg",
     ],
     caption: "pihu in saree 🌙",
     date: "July 2024",
@@ -47,7 +47,7 @@ const galleryData = [
     id: 4,
     images: [
       "/photoshoot2.jpeg",
-      "/photoshoot7.jpeg",
+      // "/photoshoot7.jpeg",
       "/photoshoot3.jpeg",
       "/photoshoot4.jpeg",
       "/photoshoot5.jpeg",
@@ -67,7 +67,7 @@ const galleryData = [
       "/orange5.jpeg",
       "/orange.jpeg",
       "/orange7.jpeg",
-      "/orange8.jpeg",
+      "/orange9.jpeg",
     ],
     caption: "beautiful in orange 🍊",
     date: "10 May 2025",
@@ -105,6 +105,12 @@ const galleryData = [
     caption: "My sweetheart 💖",
     date: "14 July 2025",
   },
+  {
+    id: 9,
+    images: ["/good.jpeg", "/good3.jpeg", "/good4.jpeg", "/good6.jpeg"],
+    caption: "Miss pihu 💖",
+    date: "14 July 2025",
+  },
 ];
 
 // 💖 CARD COMPONENT
@@ -115,8 +121,9 @@ function GalleryCard({
   currentImage,
   setSelectedImage,
 }) {
+  const [manualIndex, setManualIndex] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
   const current = activeCard === index ? currentImage : 0;
-
   return (
     <motion.div
       whileHover={{ scale: 1.03 }}
@@ -143,8 +150,31 @@ function GalleryCard({
         <div className="absolute inset-0 bg-gradient-to-br from-purple-500/10 to-pink-500/10 opacity-0 group-hover:opacity-100 transition duration-500 z-10" />
 
         {/* 🔥 Slider */}
-        <div
-          className="flex transition-transform duration-700 ease-in-out h-100"
+        <motion.div
+          drag="x"
+          dragConstraints={{ left: 0, right: 0 }}
+          onDragStart={() => setIsDragging(true)}
+          onDragEnd={(e, info) => {
+            const threshold = 50;
+
+            // 👉 Swipe Left
+            if (info.offset.x < -threshold) {
+              setManualIndex((prev) => (prev + 1) % item.images.length);
+            }
+
+            // 👉 Swipe Right
+            if (info.offset.x > threshold) {
+              setManualIndex((prev) =>
+                prev === 0 ? item.images.length - 1 : prev - 1,
+              );
+            }
+
+            // 🔥 Return to auto mode after 5 sec
+            setTimeout(() => {
+              setIsDragging(false);
+            }, 5000);
+          }}
+          className="flex transition-transform duration-700 ease-in-out h-100 cursor-grab active:cursor-grabbing"
           style={{
             transform: `translateX(-${current * 100}%)`,
           }}
@@ -160,7 +190,7 @@ function GalleryCard({
               "
             />
           ))}
-        </div>
+        </motion.div>
 
         {/* 🌌 Overlay */}
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
